@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="kgajda" id="05.01-create_schema_administration">
+        <sqlFile encoding="utf8" path="05.01-create_schema_administration.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="administration-1" author="kgajda">
+        <createTable tableName="users" schemaName="administration">
+            <column name="id" type="${id.type}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="uuid" type="varchar(37)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="email" type="varchar(150)" >
+                <constraints nullable="false" unique="true"></constraints>
+            </column>
+            <column name="password" type="varchar(37)" >
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

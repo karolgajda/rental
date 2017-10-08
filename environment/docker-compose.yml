@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  offer-postgres:
+    build: ./rental-postgres
+    image: rental-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  offer-sonar:
+    build: ./rental-sonar
+    image: rental-sonar
+    ports:
+      - "9000:9000"
+      - "9092:9092"

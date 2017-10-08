@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rental
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: drop-create
+
+management:
+  security:
+    enabled: false
+
+liquibase:
+  change-log: classpath:db/liquibase-changelog.xml
